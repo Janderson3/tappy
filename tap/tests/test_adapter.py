@@ -54,3 +54,9 @@ class TestAdapter(TestCase):
         adapter(result)
 
         self.assertEqual(1, len(result.expectedFailures))
+
+    def test_gets_description_as_id(self):
+        ok_line = self.factory.make_ok()
+        adapter = Adapter("fake.tap", ok_line)
+
+        self.assertEqual("This is a description.", adapter.id())

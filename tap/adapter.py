@@ -47,3 +47,6 @@ class Adapter(object):
 
     def __repr__(self):
         return "<file={filename}>".format(filename=self._filename)
+
+    def id(self):
+        return self._line.description.lstrip('- ')
